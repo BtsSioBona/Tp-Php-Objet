@@ -6,6 +6,9 @@ namespace tests;
 class BddTest extends \PHPUnit_Framework_TestCase
 {
 
+    /***
+     * Test de connxion à la base de donnée
+     */
     public function testConnexionBdd()
     {
         try {
