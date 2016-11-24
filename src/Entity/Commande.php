@@ -5,54 +5,65 @@ namespace src\Entity;
 
 class Commande
 {
+    /**
+     * @var int
+     */
     private $id;
+
+    /**
+     * @var \DateTime
+     */
     private $datecde;
+
+    /**
+     * @var Client
+     */
     private $leClient;
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
 
     /**
-     * @return mixed
+     * @return \DateTime
      */
-    public function getDatecde()
+    public function getDatecde(): \DateTime
     {
         return $this->datecde;
     }
 
     /**
-     * @param mixed $datecde
+     * @param \DateTime $datecde
      */
-    public function setDatecde($datecde)
+    public function setDatecde(\DateTime $datecde)
     {
         $this->datecde = $datecde;
     }
 
     /**
-     * @return mixed
+     * @return Client
      */
-    public function getLeClient()
+    public function getLeClient(): Client
     {
         return $this->leClient;
     }
 
     /**
-     * @param mixed $leClient
+     * @param Client $leClient
      */
-    public function setLeClient($leClient)
+    public function setLeClient(Client $leClient)
     {
         $this->leClient = $leClient;
     }
