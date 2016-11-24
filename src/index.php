@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace src;
 
+use src\Repository\ClientRepository;
 use src\Repository\CommandeRepository;
 use Symfony\Component\Debug\Debug;
 
@@ -13,6 +14,6 @@ Debug::enable();
 
 
 $bdd = new Bdd();
-$repo = new CommandeRepository($bdd->getConnexion());
+$repo = new ClientRepository($bdd->getConnexion());
 
-dump($repo->findAll());
+dump($repo->findById(1));

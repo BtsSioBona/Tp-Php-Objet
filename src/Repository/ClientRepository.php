@@ -18,12 +18,15 @@ class ClientRepository implements IRepository
 
     /***
      * Trouve un enregistrement par rapport à l'id
-     * @param integer $id
+     * @param int $id
      * @return mixed
      */
-    public function findById($id)
+    public function findById(int $id)
     {
-        // TODO: Implement findById() method.
+        $req = $this->conn->prepare("SELECT * FROM tppdo.client WHERE id = :id");
+        $req->bindParam(':id', $id);
+        $req->execute();
+        return $req->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     /***

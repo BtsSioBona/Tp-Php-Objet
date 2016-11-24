@@ -7,10 +7,10 @@ interface IRepository {
 
     /***
      * Trouve un enregistrement par rapport à l'id
-     * @param integer $id
+     * @param int $id
      * @return mixed
      */
-    public function findById($id);
+    public function findById(int $id);
 
     /***
      * Retourne toutes les valeurs
