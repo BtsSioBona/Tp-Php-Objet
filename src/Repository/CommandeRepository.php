@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace src\Repository;
 
 
+use src\Entity\Commande;
 use src\interfaces\IRepository;
 
 class CommandeRepository implements IRepository
@@ -41,11 +42,22 @@ class CommandeRepository implements IRepository
 
     /***
      * Insert un objet en base de donnée
-     * @param object $object
-     * @return mixed
+     * @param Commande $commande
+     * @return bool
      */
-    public function Insert($object)
+    public function Insert($commande)
     {
-        // TODO: Implement Insert() method.
+        $req = $this->conn
+            ->prepare("INSERT INTO tppdo.commande (idclient, datecde) VALUES (:idclient, :datecde)");
+
+        $idClient = null;
+        $req->bindParam(':idclient', $idClient);
+        $titre = $commande->getLeClient()->getId();
+
+        $datecde = null;
+        $req->bindParam(':datecde', $datecde);
+        $datecde = $commande->getDatecde();
+
+        //todo: Faire la récup de l'id et la conversion de date
     }
 }

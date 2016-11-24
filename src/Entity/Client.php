@@ -57,6 +57,33 @@ class Client
     private $lesCommandes;
 
     /**
+     * Client constructor.
+     * @param int $id
+     * @param string $titre
+     * @param string $nom
+     * @param string $prenom
+     * @param string $adresserue1
+     * @param string $adresserue2
+     * @param string $cp
+     * @param string $ville
+     * @param string $tel
+     * @param Commande $lesCommandes
+     */
+    public function __construct($id, $titre, $nom, $prenom, $adresserue1, $adresserue2, $cp, $ville, $tel, Commande $lesCommandes)
+    {
+        $this->id = $id;
+        $this->titre = $titre;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->adresserue1 = $adresserue1;
+        $this->adresserue2 = $adresserue2;
+        $this->cp = $cp;
+        $this->ville = $ville;
+        $this->tel = $tel;
+        $this->lesCommandes = $lesCommandes;
+    }
+
+    /**
      * @return int
      */
     public function getId(): int
