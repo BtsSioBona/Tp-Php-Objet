@@ -8,6 +8,14 @@ use src\interfaces\IRepository;
 class ClientRepository implements IRepository
 {
 
+    private $conn;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->conn = $pdo;
+    }
+
+
     /***
      * Trouve un enregistrement par rapport à l'id
      * @param integer $id
@@ -24,7 +32,7 @@ class ClientRepository implements IRepository
      */
     public function findAll()
     {
-        // TODO: Implement findAll() method.
+        return $this->conn->query("SELECT * FROM tppdo.client")->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     /***

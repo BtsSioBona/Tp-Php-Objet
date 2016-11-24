@@ -9,6 +9,14 @@ use src\interfaces\IRepository;
 class CommandeRepository implements IRepository
 {
 
+    private $conn;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->conn = $pdo;
+    }
+
+
     /***
      * Trouve un enregistrement par rapport à l'id
      * @param integer $id
@@ -25,7 +33,7 @@ class CommandeRepository implements IRepository
      */
     public function findAll()
     {
-        // TODO: Implement findAll() method.
+        return $this->conn->query("SELECT * FROM tppdo.commande")->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     /***

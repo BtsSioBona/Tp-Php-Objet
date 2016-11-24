@@ -23,4 +23,8 @@ class Bdd
         }
     }
 
+    public function getConnexion() {
+        return $this->_dbmysql;
+    }
+
 }
