@@ -14,7 +14,7 @@ class Bdd
         try {
             $connect_str = "mysql:host=localhost;dbname=tppdo";
             $connect_user = "tp";
-            $connect_pass = "trp";
+            $connect_pass = "tp";
             $options[\PDO::ATTR_ERRMODE] = \PDO::ERRMODE_EXCEPTION;
             $this->_dbmysql = new \PDO($connect_str, $connect_user, $connect_pass, $options);
 
