@@ -16,4 +16,4 @@ Debug::enable();
 $bdd = new Bdd();
 $repo = new ClientRepository($bdd->getConnexion());
 
-dump($repo->findById(1));
+dump($repo->findById(50));
