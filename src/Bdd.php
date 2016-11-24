@@ -12,9 +12,9 @@ class Bdd
     public function __construct()
     {
         try {
-            $connect_str = "mysql:host=localhost;dbname=tppdo";
-            $connect_user = "tp";
-            $connect_pass = "tp";
+            $connect_str = "mysql:host=" . Config::read("db.host") . ";dbname=" . Config::read("db.basename");
+            $connect_user = Config::read("db.user");
+            $connect_pass = Config::read("db.password");
             $options[\PDO::ATTR_ERRMODE] = \PDO::ERRMODE_EXCEPTION;
             $this->_dbmysql = new \PDO($connect_str, $connect_user, $connect_pass, $options);
 
